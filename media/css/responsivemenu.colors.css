@@ -1,0 +1,29 @@
+nav.mmenu {
+	background-color:#708EA4;
+}
+nav.mmenu ul li {
+	border-color:#486D88;
+}
+nav.mmenu ul li:first-child {
+	border-color:#486D88;
+}
+nav.mmenu ul li a {
+	color:#fff;
+}
+nav.mmenu ul.submenu {
+	background-color:#29516E;
+}
+
+/* Buttons */
+a.mmenu-toggle {
+	background-color:#ccc;
+}
+nav.mmenu a.menu-close {
+	color:#123752;
+}
+nav.mmenu a.sub-toggle:after {
+	border-color:#486D88;
+}
+nav.mmenu li.submenu-open a.sub-toggle::after {
+	background-color:#29516E;
+}

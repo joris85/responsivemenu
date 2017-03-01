@@ -1,0 +1,231 @@
+/* Base menu structure */
+body.mmenu--open {
+  overflow: hidden;
+}
+.responsive-menu {
+  & > * {
+	z-index: 999;
+  }
+
+  nav.mmenu {
+	min-width: 80%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	border-right: 1px solid #d6d6d6;
+	overflow-y: scroll;
+	z-index: 998;
+	transform: translate3d(-100%, 0, 0);
+	-webkit-transform: translate3d(-100%, 0, 0);
+	-moz-transform: translate3d(-100%, 0, 0);
+	-o-transform: translate3d(-100%, 0, 0);
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	-o-transition: all .5s;
+	transition: all .5s;
+	-webkit-overflow-scrolling: touch;
+
+	ul { 
+	  padding: 0;
+
+	   & >.active {
+         background:none;   
+        }
+
+        
+         & >.current>a:after {
+             font-family: fontawesome;
+           color: #0D9F73;  
+             content: "\f00c";
+             font-size:12px;
+               margin-left:16px;
+         }
+        
+        & >.current>a.sub-toggle:after {
+            margin-left:0;
+         }
+        
+        
+
+	  li {
+		list-style: none;
+		border-bottom: 1px solid;
+		border-color:#d6d6d6;
+		position: relative;
+
+		&:first-child {
+		  border-top: 1px solid;
+		  border-color:#d6d6d6;
+		}
+		a {
+		  padding: 14px;
+		  display: inline-block;
+		  width: 82%;
+		  font-size: 17px;
+		}
+
+		a .caret {
+		  display: none;
+		}
+		ul.submenu {
+		  background-color: #EEE;
+		  margin: 0;
+		  display: none;
+
+		  li {
+			&:last-child {
+			  border-bottom: 0px;
+			}
+			a:first-child {
+			  padding-left: 30px;
+			}
+		  }
+		  ul {
+			background-color:#d1d0d0;
+
+			li {
+			  padding-left:15px;
+			}
+		  }
+		  &.submenu-open {
+			display: block;
+		  }
+		}
+	  }
+	}
+
+	&--open {
+	  transform: translate3d(0, 0, 0);
+	  -webkit-transform: translate3d(0, 0, 0);
+	  -moz-transform: translate3d(0, 0, 0);
+	  -o-transform: translate3d(0, 0, 0);
+	  border-color: #d6d6d6;
+	  box-shadow: -1px 0px 150px 0px rgba(0, 0, 0, .4);
+	}
+
+	/* Buttons */
+	a.sub-toggle {
+	  display: inline-block;
+	  padding: 0;
+	  position: absolute;
+	  width: 17%;
+	  height: 100%;
+	  text-decoration: none;
+	  color:#333;
+
+	  &::after {
+		border-color:#d6d6d6;
+	  }
+	}
+
+	li.submenu-open a.sub-toggle {
+	  height: 56px;
+	}
+
+	ul {
+	  li {
+		a.sub-toggle::after {
+		  font-size: 34px;
+		  font-family: fontawesome;
+		  content: "\f105" ;
+		  height: 100%;
+		  display: flex;
+		  flex-direction: column;
+		  justify-content: center;
+		  text-align: center;
+		  color:#333 !important;
+		  border-color:#d6d6d6;
+		}
+
+		&.submenu-open > a.sub-toggle::after {
+		  content: "\f107" ;
+		} 
+	  }
+	}
+  }
+
+  /* Menu toggle */
+  .mmenu-bar {
+	width: 100%;
+	padding: 0 10px;
+	font-size: 16px;
+	overflow: hidden;
+  }
+  a.mmenu-toggle {
+	text-decoration: none;
+	z-index:999;
+	display:block;
+	float: left;
+	width: 25%;
+  }
+  a.mmenu-search-toggle {
+	float: right;
+	text-align: right;
+	width: 25%;
+      
+   
+  }
+  .mmenu-top {
+	position:absolute;
+	top: 0;
+	left: 0;
+  }
+  .mmenu-fixed {
+	position:fixed;
+	top: 0;
+	left: 0;
+  }
+  .mmenu-search {
+	top: 45px;
+	width: 100%;
+	z-index: 999;
+	-webkit-transform: translate3d(100%, 0, 0);
+	-moz-transform: translate3d(100%, 0, 0);
+	-o-transform: translate3d(100%, 0, 0);
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	-o-transition: all .5s;
+	transition: all .5s;
+	-webkit-overflow-scrolling: touch;
+
+         input {
+       width:100%;
+          height:40px;
+      }
+      
+	&--open {
+	  transform: translate3d(0, 0, 0);
+	  -webkit-transform: translate3d(0, 0, 0);
+	  -moz-transform: translate3d(0, 0, 0);
+	  -o-transform: translate3d(0, 0, 0);
+	}
+	.element-invisible {
+	  display: none;
+	}
+  }
+
+  &--open {
+	a.mmenu-toggle .fa-bars::before {
+	  content: "\f00d";
+	}
+  }
+  .mmenu-logo {
+	float: left;
+	width: 50%;
+	text-align: center;
+          img {
+     height:30px;   
+    }
+  }
+}
+
+/* fix for ie9 + tablet landspace/portrait fix */
+@media (min-width: 992px) {
+    .responsive-menu {
+        display: none;
+    }
+    .mmenu.mmenu--open{
+        display:none;
+    }
+}

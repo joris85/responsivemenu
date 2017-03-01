@@ -1,0 +1,196 @@
+/* Base menu structure */
+body.mmenu--open {
+  overflow: hidden;
+}
+.responsive-menu {
+  /* Menu toggle */
+
+}
+.responsive-menu > * {
+  z-index: 999;
+}
+.responsive-menu nav.mmenu {
+  min-width: 80%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-right: 1px solid #d6d6d6;
+  overflow-y: scroll;
+  z-index: 998;
+  transform: translate3d(-100%, 0, 0);
+  -webkit-transform: translate3d(-100%, 0, 0);
+  -moz-transform: translate3d(-100%, 0, 0);
+  -o-transform: translate3d(-100%, 0, 0);
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+  -webkit-overflow-scrolling: touch;
+  /* Buttons */
+
+}
+.responsive-menu nav.mmenu ul {
+  padding: 0;
+}
+.responsive-menu nav.mmenu ul > .active {
+  background: none;
+}
+.responsive-menu nav.mmenu ul > .current > a:after {
+  font-family: fontawesome;
+  color: #0D9F73;
+  content: "\f00c";
+  font-size: 12px;
+  margin-left: 16px;
+}
+.responsive-menu nav.mmenu ul > .current > a.sub-toggle:after {
+  margin-left: 0;
+}
+.responsive-menu nav.mmenu ul li {
+  list-style: none;
+  border-bottom: 1px solid;
+  border-color: #d6d6d6;
+  position: relative;
+}
+.responsive-menu nav.mmenu ul li:first-child {
+  border-top: 1px solid;
+  border-color: #d6d6d6;
+}
+.responsive-menu nav.mmenu ul li a {
+  padding: 14px;
+  display: inline-block;
+  width: 82%;
+  font-size: 17px;
+}
+.responsive-menu nav.mmenu ul li a .caret {
+  display: none;
+}
+.responsive-menu nav.mmenu ul li ul.submenu {
+  background-color: #EEE;
+  margin: 0;
+  display: none;
+}
+.responsive-menu nav.mmenu ul li ul.submenu li:last-child {
+  border-bottom: 0px;
+}
+.responsive-menu nav.mmenu ul li ul.submenu li a:first-child {
+  padding-left: 30px;
+}
+.responsive-menu nav.mmenu ul li ul.submenu ul {
+  background-color: #d1d0d0;
+}
+.responsive-menu nav.mmenu ul li ul.submenu ul li {
+  padding-left: 15px;
+}
+.responsive-menu nav.mmenu ul li ul.submenu.submenu-open {
+  display: block;
+}
+.responsive-menu nav.mmenu--open {
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  border-color: #d6d6d6;
+  box-shadow: -1px 0px 150px 0px rgba(0, 0, 0, 0.4);
+}
+.responsive-menu nav.mmenu a.sub-toggle {
+  display: inline-block;
+  padding: 0;
+  position: absolute;
+  width: 17%;
+  height: 100%;
+  text-decoration: none;
+  color: #333;
+}
+.responsive-menu nav.mmenu a.sub-toggle::after {
+  border-color: #d6d6d6;
+}
+.responsive-menu nav.mmenu li.submenu-open a.sub-toggle {
+  height: 56px;
+}
+.responsive-menu nav.mmenu ul li a.sub-toggle::after {
+  font-size: 34px;
+  font-family: fontawesome;
+  content: "\f105";
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: #333 !important;
+  border-color: #d6d6d6;
+}
+.responsive-menu nav.mmenu ul li.submenu-open > a.sub-toggle::after {
+  content: "\f107";
+}
+.responsive-menu .mmenu-bar {
+  width: 100%;
+  padding: 0 10px;
+  font-size: 16px;
+  overflow: hidden;
+}
+.responsive-menu a.mmenu-toggle {
+  text-decoration: none;
+  z-index: 999;
+  display: block;
+  float: left;
+  width: 25%;
+}
+.responsive-menu a.mmenu-search-toggle {
+  float: right;
+  text-align: right;
+  width: 25%;
+}
+.responsive-menu .mmenu-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.responsive-menu .mmenu-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.responsive-menu .mmenu-search {
+  top: 45px;
+  width: 100%;
+  z-index: 999;
+  -webkit-transform: translate3d(100%, 0, 0);
+  -moz-transform: translate3d(100%, 0, 0);
+  -o-transform: translate3d(100%, 0, 0);
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+  -webkit-overflow-scrolling: touch;
+}
+.responsive-menu .mmenu-search input {
+  width: 100%;
+  height: 40px;
+}
+.responsive-menu .mmenu-search--open {
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+}
+.responsive-menu .mmenu-search .element-invisible {
+  display: none;
+}
+.responsive-menu--open a.mmenu-toggle .fa-bars::before {
+  content: "\f00d";
+}
+.responsive-menu .mmenu-logo {
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+.responsive-menu .mmenu-logo img {
+  height: 30px;
+}
+/* fix for ie9 */
+@media (min-width: 992px) {
+  .responsive-menu {
+    display: none;
+  }
+}
