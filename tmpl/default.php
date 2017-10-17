@@ -16,6 +16,11 @@ defined('_JEXEC') or die;
 	background-color:<?php echo $params->get("menutogglebackground", "#666666"); ?>;
 	height:<?php echo $params->get("menutoggleheight", "45px"); ?>;
 }
+    
+    .mmenu-bar a {
+        color:<?php echo $params->get("menulabelcolor", "#ffffff"); ?>;
+          line-height: <?php echo $params->get("menutoggleheight", "45px"); ?>;
+    }
 a.mmenu-toggle,
 a.mmenu-search-toggle {
 	color:<?php echo $params->get("menulabelcolor", "#ffffff"); ?>;
@@ -47,21 +52,38 @@ nav.mmenu ul li a, .menu-close {
 </style>
 <div class="responsive-menu">
 	<div class="mmenu-bar <?php echo $params->get('menutogglefixed'); ?> <?php echo $params->get('menutoggletop'); ?>">
-		<a href="#" class="mmenu-toggle">
-			<i class="fa fa-bars"></i> <?php echo $params->get('menulabel', 'MENU'); ?>
-		</a>
 		<div class="mmenu-logo">
+            
+            
 			<?php if ($params->get("logo")) : ?>
             <a href="/">
 				<img src="<?php echo $params->get("logo"); ?>">
             </a>
 			<?php endif;  ?>
+             
+            
 		</div>
+        <a href="#" class="mmenu-toggle">
+			<i class="fa fa-bars"></i><?php if ($params->get("showmenulabel", 1)) : ?> <?php echo $params->get('menulabel', 'MENU'); ?> <?php endif; ?>
+		</a>
+        <?php if ($params->get("showcontacticon", 1)) : ?>
+        <a href="/contact" >
+			<i class="fa fa-address-book"></i>
+		</a>
+        <?php endif; ?>
+        <?php if ($params->get("showphone", 1)) : ?>
+        <a href="tel:<?php echo $params->get("phonenumber"); ?>" >
+			<i class="fa fa-phone"></i>
+		</a>
+        <?php endif; ?>
+        
 		<?php if ($params->get("showsearch", 1)) : ?>
 		<a href="#" class="mmenu-search-toggle">
-			<i class="<?php echo $params->get("searchicon", "fa fa-search"); ?>"></i> <?php echo $params->get("searchlabel", "Zoeken"); ?>
+			<i class="<?php echo $params->get("searchicon", "fa fa-search"); ?>"></i> <?php if ($params->get("showsearchlabel", 1)) : ?> <?php echo $params->get("searchlabel", "Zoeken"); ?> <?php endif; ?>
 		</a>
 		<?php endif; ?>
+       
+        
 	</div>
 	<?php if ($params->get("showsearch", 1)) : ?>
 	<div class="mmenu-search <?php echo $params->get('menutogglefixed'); ?> <?php echo $params->get('menutoggletop'); ?>">
@@ -70,6 +92,9 @@ nav.mmenu ul li a, .menu-close {
 			$attribs["style"] = "none";
 			echo JModuleHelper::renderModule($module, $attribs);
 		?>
+        
+        
+        
 	</div>
 	<?php endif; ?>
 	<nav class="mmenu">
