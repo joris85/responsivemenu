@@ -129,17 +129,27 @@ body.mmenu--open {
   font-size: 16px;
   overflow: hidden;
 }
+.responsive-menu .mmenu-bar a {
+float:right;   
+font-size: 26px;
+    padding:0 12px;
+    font-synthesis: none;
+text-rendering: optimizeLegibility;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+-moz-font-feature-settings: 'liga', 'kern';
+}
+
 .responsive-menu a.mmenu-toggle {
   text-decoration: none;
   z-index: 999;
   display: block;
-  float: left;
-  width: 25%;
+  float: right;
+    width: 43px
 }
 .responsive-menu a.mmenu-search-toggle {
   float: right;
   text-align: right;
-  width: 25%;
 }
 .responsive-menu .mmenu-top {
   position: absolute;
@@ -150,7 +160,16 @@ body.mmenu--open {
   position: fixed;
   top: 0;
   left: 0;
+    box-shadow: 0 0 5px #d1d1d1;
 }
+.responsive-menu .mmenu-fixed-bottom {
+   position: fixed;
+  bottom: 0;
+    top:auto;
+  left: 0;
+ border-top: 1px solid #ddd;  
+}
+
 .responsive-menu .mmenu-search {
   top: 45px;
   width: 100%;
@@ -188,9 +207,16 @@ body.mmenu--open {
 .responsive-menu .mmenu-logo img {
   height: 30px;
 }
-/* fix for ie9 */
+.responsive-menu .mmenu-logo a {
+   float:left;
+}
+
+/* fix for ie9 + tablet landspace/portrait fix */
 @media (min-width: 992px) {
   .responsive-menu {
+    display: none;
+  }
+  .mmenu.mmenu--open {
     display: none;
   }
 }

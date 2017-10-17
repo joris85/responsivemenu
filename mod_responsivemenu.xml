@@ -144,6 +144,18 @@
 					description="MOD_RESPONSIVEMENU_FIELD_MOBILETOGGLEHEIGHT_DESC"
 				/>
 				<field
+					name="showmenulabel"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="0"
+				    label="MOD_RESPONSIVEMENU_FIELD_SHOWMENU_LABEL"
+				    description="MOD_RESPONSIVEMENU_FIELD_SHOWMENU_DESC"
+					>
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+					</field>
+                
+                <field
 					name="menulabel"
 					type="text"
 					default="MENU"
@@ -167,8 +179,9 @@
 					label="MOD_RESPONSIVEMENU_FIELD_MENUTOGGLEFIXED_LABEL"
 					description="MOD_RESPONSIVEMENU_FIELD_MENUTOGGLEFIXED_DESC"
 					>
-					<option value="mmenu-fixed">JYES</option>
-					<option value="">JNO</option>
+					<option value="mmenu-fixed">Top</option>
+                    <option value="mmenu-fixed-bottom">Bottom</option>
+					<option value="0">JNO</option>
 				</field>
 				<field
 					name="menutoggletop"
@@ -208,6 +221,40 @@
 						<option value="1">MOD_RESPONSIVEMENU_FIELD_MOBILESUBMENUOPENED_ALL</option>
 						<option value="2">MOD_RESPONSIVEMENU_FIELD_MOBILESUBMENUOPENED_CHOOSE</option>
 				</field>
+                <field
+					name="showphone"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+				    label="MOD_RESPONSIVEMENU_FIELD_SHOWPHONE_LABEL"
+				    description="MOD_RESPONSIVEMENU_FIELD_SHOWPHONE_DESC"
+				>
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+					</field>
+                    
+                <field
+					name="phonenumber"
+				    type="text"
+				    showon="showphone:1"
+				    default="0343532785"
+				    label="MOD_RESPONSIVEMENU_FIELD_SEARCHLABEL_LABEL"
+				    description="MOD_RESPONSIVEMENU_FIELD_SEARCHLABEL_DESC"
+				/>
+                
+                <field
+					name="showcontacticon"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="0"
+				    label="MOD_RESPONSIVEMENU_FIELD_SHOWCONTACT_LABEL"
+				    description="MOD_RESPONSIVEMENU_FIELD_SHOWCONTACT_DESC"
+					>
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+					</field>
+                
+                
 				<field
 					name="showsearch"
 					type="radio"
@@ -230,10 +277,22 @@
 						<option value="mod_finder">MOD_RESPONSIVEMENU_FIELD_SEARCHMODULE_MODFINDER</option>
 						<option value="mod_search">MOD_RESPONSIVEMENU_FIELD_SEARCHMODULE_MODSEARCH</option>
 				</field>
+                <field
+					name="showsearchlabel"
+					type="radio"
+                    showon="showsearch:1"
+					class="btn-group btn-group-yesno"
+					default="0"
+				    label="MOD_RESPONSIVEMENU_FIELD_SHOWSEARCHLABEL_LABEL"
+				    description="MOD_RESPONSIVEMENU_FIELD_SHOWSEARCHLABEL_DESC"
+					>
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+					</field>
 				<field
 					name="searchlabel"
 				    type="text"
-				    showon="showsearch:1"
+				    showon="showsearchlabel:1"
 				    default="Zoeken"
 				    label="MOD_RESPONSIVEMENU_FIELD_SEARCHLABEL_LABEL"
 				    description="MOD_RESPONSIVEMENU_FIELD_SEARCHLABEL_DESC"
