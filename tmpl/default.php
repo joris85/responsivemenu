@@ -64,22 +64,22 @@ nav.mmenu ul li a, .menu-close {
             
 		</div>
         <a href="#" class="mmenu-toggle">
-			<i class="fa fa-bars"></i><?php if ($params->get("showmenulabel", 1)) : ?> <?php echo $params->get('menulabel', 'MENU'); ?> <?php endif; ?>
+			<i class="fal fa-bars"></i><?php if ($params->get("showmenulabel", 1)) : ?> <?php echo $params->get('menulabel', 'MENU'); ?> <?php endif; ?>
 		</a>
         <?php if ($params->get("showcontacticon", 1)) : ?>
         <a href="/contact" >
-			<i class="fa fa-address-book"></i>
+			<i class="fal fa-address-book"></i>
 		</a>
         <?php endif; ?>
         <?php if ($params->get("showphone", 1)) : ?>
         <a href="tel:<?php echo $params->get("phonenumber"); ?>" >
-			<i class="fa fa-phone"></i>
+			<i class="fal fa-phone"></i>
 		</a>
         <?php endif; ?>
         
 		<?php if ($params->get("showsearch", 1)) : ?>
 		<a href="#" class="mmenu-search-toggle">
-			<i class="<?php echo $params->get("searchicon", "fa fa-search"); ?>"></i> <?php if ($params->get("showsearchlabel", 1)) : ?> <?php echo $params->get("searchlabel", "Zoeken"); ?> <?php endif; ?>
+			<i class="fal fa-search"></i> <?php if ($params->get("showsearchlabel", 1)) : ?> <?php echo $params->get("searchlabel", "Zoeken"); ?> <?php endif; ?>
 		</a>
 		<?php endif; ?>
        
